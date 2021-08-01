@@ -1,0 +1,234 @@
+body {
+    margin: 0px;
+    width: 100%;
+    background: linear-gradient(#023047, #219ebc);
+    font-family: 'Ubuntu', sans-serif;
+
+}
+
+/*Scroll starts*/
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;   
+    background:rgba(255,255,255,.4);
+    border-radius: 4px;
+}
+::-webkit-scrollbar:hover {
+    background: #b3b3b3;
+    box-shadow: 002px1pxrgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar:hover:active {
+    background: #999;
+}
+/*Scroll ends*/
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__img {
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.header__menu {
+    margin-right: 30px;
+}
+
+.header__menu ul {
+    display: none;
+    list-style: none;
+    padding: 0px;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+    margin: 0px 0px 0px -14px;
+}
+
+.header__menu:hover ul, ul:hover {
+    display: block;
+}
+
+.header__menu li {
+    margin: 10px 0px;
+}
+
+.header__menu li a {
+    color:white;
+    text-decoration: none;
+}
+
+.header__menu li a:hover {
+    text-decoration: underline;
+}
+
+.header__menu--profile {
+    margin-right: 50px; /**/
+    display: flex;   
+}
+
+.header__menu--profile img {
+    margin-right: 8px;
+    width: 55px;
+}
+
+.header__menu--profile p {
+    margin: 0px;
+    color: white;
+}
+/*Main va de aquí*/
+.categories__title {
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    padding-left: 30px ;
+    width: 100%;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__title {
+    color: white;
+    font-size: 25px;
+}
+
+.input {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 25px;
+    color:white;
+    font-family: 'Muli', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    padding: 0px, 20px;
+    width: 70%;
+    outline: none;
+}
+
+::placeholder {
+    color: white;
+}
+/*Hasta aquí*/
+
+.carousel { /*Contenedor padre*/
+    width: 100%;
+    overflow: scroll;
+    padding: 30px;
+    position: relative;
+}
+
+.carousel__container {
+    white-space: nowrap; /*atributo utilizado para dar el efecto de "infinito", sin que los contenedores se vean limitados por el width de la web*/
+    margin: 70px 0px;
+    padding-bottom: 10px;
+}
+
+.carousel-item {
+    background-color: yellowgreen;
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 450ms all;
+    transform-origin: center left;
+    position: relative;
+}
+
+.carousel-item:hover ~ .carousel-item {
+    transform: translate3d(100px, 0, 0);   
+}
+
+.carousel__container:hover .carousel-item {  /*Esta linea de código genera opacidad en los elementos que no son seleccionados*/
+    opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover { /*Y esta hace que crezca el elemento que hacemos hover*/
+    transform: scale(1.5); 
+    opacity: 1;
+}
+
+.carousel-item__img {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+
+}
+
+.carousel-item__details {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%); /*Desvanecidos*/   
+    font-size: 10px;
+    opacity: 0;
+    transition: 450ms opacity;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.carousel-item__details:hover {
+    opacity: 1;
+}
+
+.carousel-item__details-Play {
+    width: 20px;
+    height: 20px;
+}
+
+.carousel-item__details--title, .carousel-item__details--subtitle {
+    color: #ffffff
+} 
+
+.footer {
+    background-color: linear-gradient(#023047, #219ebc);
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+
+}
+
+.footer a {
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    .login__container {
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        width: 100%;
+
+    }
+    .footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
